@@ -1,0 +1,9 @@
+html, body, div, p {
+  font-family: "Lora", "PingFang TC", "Hiragino Sans", "微軟正黑體", serif;
+}
+html, body {
+  font-size: 16px;
+}
+code {
+  font-family: "Roboto Mono", monospace;
+}
