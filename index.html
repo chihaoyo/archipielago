@@ -24,7 +24,6 @@ $(function() {
 	var $google = $('#google');
 	var $list = $('<ul>').appendTo($google);
 	$.get(url, function(data) {
-    console.log(data);
 		for(var i = 0; i < data.feed.entry.length; i++) {
 			var entry = data.feed.entry[i];
 			var title = entry['gsx$title']['$t'];
@@ -32,7 +31,6 @@ $(function() {
 
 			var $item = $('<li>').appendTo($list);
 			var $a = $('<a>').attr({href: url, target: '_new'}).html(title).appendTo($item);
-      console.log(title,url,i);
 		}
 	});
 });
