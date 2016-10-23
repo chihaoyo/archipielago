@@ -32,6 +32,8 @@ $(function() {
 			var $item = $('<li>').appendTo($list);
 			var $a = $('<a>').attr({href: url, target: '_new'}).html(title).appendTo($item);
 		}
+    if(_jf)
+      _jf.flush();
 	});
 });
 
