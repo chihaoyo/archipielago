@@ -1,7 +1,7 @@
-html, body, div, p {
-  font-family: "Lora", "IPAmjMing", "PingFang TC", "Hiragino Sans", "微軟正黑體", serif;
+html, body, section, div, p {
+  font-family: "Lora", "ipa-mj-mincho", "PingFang TC", "Hiragino Sans", "微軟正黑體", serif;
 }
-html, body {
+html, body, section {
   margin: 0;
   font-size: 16px;
 }
@@ -16,8 +16,11 @@ a, a:visited, a:active, a:hover {
   text-decoration: none;
   color: blue;
 }
+section {
+  margin: 0 1rem;
+}
 h1 {
-  margin: 1rem;
+  margin: 1rem 0;
 }
 img {
   display: block;
