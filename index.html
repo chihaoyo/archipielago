@@ -9,29 +9,28 @@
   <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-42175.js"></script>
 </head>
 <body>
-  <img src="images/archipelago-3-01.png" width="400px" />
-  <section>
-    <h1>群島 archipiélago</h1>
-    <div id="google"></div>
-    <p><a href="https://docs.google.com/spreadsheets/d/1p9VZmUh_6QeT8-oTuG9kkHzpG9RWE7zLYKIzLEnYvOg/edit" target="_new">編輯</a></p>
+  <section id="grid">
+    <div class="grid-item"><h1>群島🏝archipiélago</h1></div>
+    <div class="grid-item"><img src="images/archipelago-3-01.png" /></div>
   </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
 <script>
 
 $(function() {
 	var url = 'https://spreadsheets.google.com/feeds/list/1p9VZmUh_6QeT8-oTuG9kkHzpG9RWE7zLYKIzLEnYvOg/od6/public/values?alt=json';
-	var $google = $('#google');
-	var $list = $('<ul>').appendTo($google);
+	var $grid = $('#grid');
 	$.get(url, function(data) {
 		for(var i = 0; i < data.feed.entry.length; i++) {
 			var entry = data.feed.entry[i];
 			var title = entry['gsx$title']['$t'];
 			var url = entry['gsx$url']['$t'];
 
-			var $item = $('<li>').appendTo($list);
+			var $item = $('<div class="grid-item">').appendTo($grid);
 			var $a = $('<a>').attr({href: url, target: '_new'}).html(title).appendTo($item);
 		}
+    $grid.append('<div class="grid-item"><p><a href="https://docs.google.com/spreadsheets/d/1p9VZmUh_6QeT8-oTuG9kkHzpG9RWE7zLYKIzLEnYvOg/edit" target="_new">編輯這份清單</a></p></div>');
     if(_jf)
       _jf.flush();
 	});
