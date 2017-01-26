@@ -33,6 +33,9 @@ img {
 }
 .grid-item.large {
   width: 482px;
+  border: 4px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
   overflow: scroll;
 }
 .grid-item > img {
@@ -48,4 +51,11 @@ img {
 }
 .gist .gist-file {
   margin-bottom: 0 !important;
+  border: none !important;
+}
+.gist .gist-data {
+  border: none !important;
+}
+.gist .gist-meta {
+  margin-top: 1em;
 }
