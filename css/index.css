@@ -1,4 +1,4 @@
-html, body, section, div, p {
+html, body, section, div {
   font-family: "Lora", "ipa-mj-mincho", "PingFang TC", "Hiragino Sans", "微軟正黑體", serif;
 }
 html, body, section {
@@ -31,6 +31,10 @@ img {
   height: 150px;
   margin: 8px;
 }
+.grid-item.large {
+  width: 482px;
+  overflow: scroll;
+}
 .grid-item > img {
   width: 100%;
 }
@@ -41,4 +45,7 @@ img {
   content: "";
   display: block;
   clear: both;
+}
+.gist .gist-file {
+  margin-bottom: 0 !important;
 }
