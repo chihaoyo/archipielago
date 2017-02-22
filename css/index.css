@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
 html, body, section, div {
-  font-family: "Lora", "ipa-mj-mincho", "PingFang TC", "Hiragino Sans", "微軟正黑體", serif;
+  font-family: "Space Mono", "ipa-mj-mincho", "PingFang TC", "Hiragino Sans", "微軟正黑體", sans-serif;
 }
 html, body, section {
   margin: 0;
@@ -13,11 +15,14 @@ h1 {
   word-break: break-all;
 }
 code {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Space Mono", monospace;
 }
 a, a:visited, a:active, a:hover {
   text-decoration: none;
   color: blue;
+}
+a:hover {
+  color: red;
 }
 section, p {
   margin: 0;
