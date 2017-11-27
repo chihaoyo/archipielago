@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
 html, body, section, div {
-  font-family: "Space Mono", "ipa-mj-mincho", "PingFang TC", "Hiragino Sans", "微軟正黑體", sans-serif;
+  font-family: "Space Mono", "xingothic-tc", "PingFang TC", "Hiragino Sans", "微軟正黑體", sans-serif;
 }
 html, body, section {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1.35;
 }
 h1, h2, h3, h4 {
   margin: 0;
@@ -31,6 +32,7 @@ img {
   display: block;
 }
 .grid-item {
+  position: relative;
   float: left;
   width: 150px;
   height: 150px;
@@ -45,6 +47,15 @@ img {
 }
 .grid-item > img {
   width: 100%;
+}
+.grid-item > label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 0.6rem;
+  color: white;
+  background: grey;
+  padding: 0.125rem 0.25rem;
 }
 #grid {
   margin: 8px;

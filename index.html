@@ -12,7 +12,7 @@
     <div class="grid-item"><h1>群島🏝archipiélago</h1></div>
     <div class="grid-item"><img src="images/archipelago-3-01.png" /></div>
     <div class="grid-item"><a href="//facebook.com/archipielagoTW" target="_blank">We use Facebook to advertise</a></div>
-    <div class="grid-item"><a href="//beta.hackfoldr.org/" target="_blank">We use Hackfoldr to organize</a></div>
+    <div class="grid-item"><a href="#" target="_blank">We use Hackfoldr to organize</a></div>
     <div class="grid-item"><a href="//github.com/chihaoyo/archipielago" target="_blank">Send us a PR via GitHub</a></div>
     <!--<div class="grid-item large"><script src="https://gist.github.com/chihaoyo/6db79f23fcbdc542947f4ee9857335e6.js"></script></div>-->
   </section>
@@ -22,32 +22,43 @@
 <script>
 
 $(function() {
-	var url = 'https://www.ethercalc.org/pidandoufou.csv.json';
-	var $grid = $('#grid');
+	var url = 'https://www.ethercalc.org/pidandoufou.csv.json'
+	var $grid = $('#grid')
 	$.get(url, function(data) {
-    var folder = '';
-    var $item = null;
+    var folder = ''
+    var $item = null
+    var $a = null
+    var $label = null
     for(var row of data) {
-      var url = row[0];
-      var title = row[1];
-      var options = row[2];
-      var label = row[3];
+      var url = row[0]
+      var title = row[1]
+      var options = row[2]
+      var label = row[3]
 
       if(url != '#url' && title.length > 0) {
-        if(url.length > 0) {
-          if(folder.indexOf('活動') > -1)
-            $item = $('<div class="grid-item">').appendTo($grid);
-            var $a = $('<a>').attr({href: url, target: '_new'}).html(title).appendTo($item);
+        if(url.length > 0 && folder.indexOf('活動') > -1) {
+          $item = $('<div class="grid-item">').appendTo($grid)
+          $a = $('<a>').attr({ href: url, target: '_new' }).html(title).appendTo($item)
+          if(label.length > 0) {
+            var labelTextColor = 'white'
+            var [labelColor, labelText] = label.split(' ')
+            if(labelColor === 'yellow') {
+              labelTextColor = 'black'
+            }
+            $label = $('<label>').css({ backgroundColor: labelColor, color: labelTextColor }).html(labelText).appendTo($item)
+          }
         }
         else {
-          $item = null;
-          folder = title;
+          $item = null
+          $a = null
+          $label = null
+          folder = title
         }
       }
     }
-    _jf && _jf.flush();
-	});
-});
+    _jf && _jf.flush()
+	})
+})
 
 </script>
 </html>
