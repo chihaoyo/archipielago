@@ -1,3 +1,3 @@
 # archipiélago
 
-http://archipielago.tw
+http://acplg.tw

@@ -49,13 +49,11 @@ img {
   width: 100%;
 }
 .grid-item > label {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-size: 0.75rem;
-  color: white;
-  background: grey;
+  display: block;
   padding: 0.125rem 0.25rem;
+  margin-bottom: 0.125rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
 }
 #grid {
   margin: 8px;

@@ -39,15 +39,15 @@ $(function() {
       if(url != '#url' && title.length > 0) {
         if(url.length > 0 && folder.indexOf('活動') > -1) {
           $item = $('<div class="grid-item">').appendTo($grid)
-          $a = $('<a>').attr({ href: url, target: '_new' }).html(title).appendTo($item)
           if(label.length > 0) {
             var labelTextColor = 'white'
             var [labelColor, labelText] = label.split(' ')
-            if(labelColor === 'yellow') {
+            if(['yellow', 'pink'].includes(labelColor)) {
               labelTextColor = 'black'
             }
             $label = $('<label>').css({ backgroundColor: labelColor, color: labelTextColor }).html(labelText).appendTo($item)
           }
+          $a = $('<a>').attr({ href: url, target: '_new' }).html(title).appendTo($item)
         }
         else {
           $item = null
